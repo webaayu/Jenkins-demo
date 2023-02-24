@@ -11,14 +11,14 @@ pipeline{
 	    stage('gitclone') {
 
 			steps {
-				git 'https://github.com/oshi36/Jenkins-demo.git'
+				git 'https://github.com/webaayu/Jenkins-demo.git'
 			}
 		}
 
 		stage('Build') {
 
 			steps {
-				sh 'docker build -t oshi36/nodeapp_test:latest .'
+				sh 'docker build -t pratikshahp/nodeapp_test:latest .'
 			}
 		}
 
@@ -32,7 +32,7 @@ pipeline{
 		stage('Push') {
 
 			steps {
-				sh 'docker push oshi36/nodeapp_test:latest'
+				sh 'docker push pratikshahp/nodeapp_test:latest'
 			}
 		}
 	}
